@@ -14,6 +14,7 @@
 
 
 <?= $this->include('layout/navbar') ; ?>
+
 <?= $this->renderSection('content') ; ?>
 
 

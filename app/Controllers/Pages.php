@@ -23,7 +23,25 @@ class Pages extends BaseController
     public function contact()
     {
         $data = [
-            'title' => 'Contact | yaserantariksa'
+            'title' => 'Contact | yaserantariksa',
+            'alamat' => [
+                [
+                    'tipe' => 'Rumah',
+                    'komplek' => 'Komplek Griya Prima Asri',
+                    'jalan' => 'Jl. Nuri D1 No.14 RT.003 RW.014',
+                    'kelurahan' => 'Desa Bojongmalaka, Kecamatan Baleendah',
+                    'kota kab' => 'Kabupaten Bandung, Jawa Barat',
+                    'negara' => 'Indonesia, 40375'
+                ],
+                [
+                    'tipe' => 'Kantor',
+                    'komplek' => 'Komplek Griya Prima Asri',
+                    'jalan' => 'Jl. Nuri D1 No.14 RT.003 RW.014',
+                    'kelurahan' => 'Desa Bojongmalaka, Kecamatan Baleendah',
+                    'kota kab' => 'Kabupaten Bandung, Jawa Barat',
+                    'negara' => 'Indonesia, 40375'
+                ]
+            ]
         ];
         return view('Pages/contact' , $data );
     }
