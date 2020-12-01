@@ -1,10 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+<div class="container">
 
-  <div class="container">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:white;">
 
-  <a class="navbar-brand" href="#">
-    <img src="/img/logoya.png" width="50" height="50" alt="" loading="lazy">
+
+  <a class="navbar-brand" href="/">
+    <img src="/img/logoyawhite.png" width="50" height="50" alt="" loading="lazy">
   </a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,16 +14,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/Pages/about">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/Pages/about">About <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/tamu/">Tamu <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/tamu">Tamu <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/Pages/contact">Contact <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/Pages/contact">Contact <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -29,5 +31,6 @@
       <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
-  </div>
 </nav>
+
+</div>

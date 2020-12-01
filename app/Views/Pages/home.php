@@ -2,7 +2,7 @@
 
 
 <?= $this->section('content'); ?>
-<div class="container mt-4">
+<div class="container mt-4 bg-light">
   <div class="row">
     <div class="col">
       <h1>Selamat Datang di yaserantariksa</h1>

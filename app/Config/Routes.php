@@ -32,8 +32,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::index');
+$routes->get('/tamu/create', 'Tamu::create') ;
 $routes->get('/tamu/(:segment)', 'Tamu::detail/$1') ;
-
 
 /**
  * --------------------------------------------------------------------

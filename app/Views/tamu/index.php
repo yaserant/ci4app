@@ -2,11 +2,12 @@
 
 <?= $this->section('content'); ?>
     
-<div class="container mt-4">
-        <div class="row">
-            <div class="col">
-                <h1>Daftar Portofolio</h1>
-                <table class="table table-hover table-dark my-4">
+<div class="container mt-4 bg-light">
+  <div class="row">
+    <div class="col">
+                <h1>Daftar Tamu</h1>
+                <a href="/tamu/create" class="btn btn-outline-primary">Tambah Tamu</a>
+                <table class="table table-hover my-2">
                     <thead>
                         <tr>
                         <th scope="col">No</th>
@@ -16,8 +17,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($tamu as $row ) : ?>
                         <?php $i = 1 ; ?>
+                        <?php foreach ($tamu as $row ) : ?>
                         <tr>
                         <th scope="row"> <?= $i ; ?></th>
                         <td>
@@ -25,7 +26,7 @@
                         </td>
                         <td><?= $row['nama'];?></td>
                         <td>
-                            <a href="/tamu/<?= $row['slug'] ; ?>">Detail</a>
+                            <a href="/tamu/<?= $row['slug'] ; ?>" class="btn btn-secondary">Detail</a>
                         </td>
                         </tr>
                         <?php $i++ ; ?>

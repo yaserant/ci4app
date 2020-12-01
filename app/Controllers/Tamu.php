@@ -28,15 +28,13 @@ class Tamu extends BaseController
         // foreach( $tamu->getResultArray() as $row ) {
         //     d($row) ;
         // }
-
-
         return view('tamu/index', $data);
     }
 
 
     public function detail($slug) {
         $data = [
-            'title' => 'Daftar Tamu',
+            'title' => 'Detail Data Tamu',
             'tamu' => $this->daftartamuModel->getTamu($slug)
         ];
 
@@ -44,6 +42,21 @@ class Tamu extends BaseController
         return view('tamu/detail',$data) ;
         
     }
+
+
+    public function create() {
+        $data = [
+            'title'=> 'Tambah Data Tamu'
+        ];
+        return view('tamu/create', $data);
+    }
+
+    public function save() {
+        dd($this->request->getVar());
+    }
+
+
+
 }
 
 
