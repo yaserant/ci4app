@@ -50,6 +50,7 @@ class Tamu extends BaseController
 
 
     public function create() {
+
         $data = [
             'title'=> 'Tambah Data Tamu'
         ];
@@ -57,6 +58,15 @@ class Tamu extends BaseController
     }
 
     public function save() {
+        
+        // validasi data yang di input
+        if(!$this->validate([
+            'nama' => 'required|is_unique[tamu.nama]'
+
+        ])) {
+            return redirect()->to('/tamu/create');
+        }
+
         $slug = url_title($this->request->getVar('nama'), '_', true);
         $this->daftartamuModel->save([
             'nama' => $this->request->getVar('nama'),
