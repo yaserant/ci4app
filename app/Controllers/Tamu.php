@@ -38,6 +38,11 @@ class Tamu extends BaseController
             'tamu' => $this->daftartamuModel->getTamu($slug)
         ];
 
+        // jika data tamu tidak ditemukan di table
+        if(empty($data['tamu'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Tamu atas nama ' .$slug. ' tidak ditemukan.');
+        }
+
         
         return view('tamu/detail',$data) ;
         
@@ -52,7 +57,18 @@ class Tamu extends BaseController
     }
 
     public function save() {
-        dd($this->request->getVar());
+        $slug = url_title($this->request->getVar('nama'), '_', true);
+        $this->daftartamuModel->save([
+            'nama' => $this->request->getVar('nama'),
+            'slug' => $slug,
+            'alamat' => $this->request->getVar('alamat'),
+            'telepon' => $this->request->getVar('telepon'),
+            'foto' => $this->request->getVar('foto')
+        ]);
+
+        session()->setFlashdata('pesan','Data berhasil ditambahkan.') ;
+
+        return redirect()->to('/tamu');
     }
 
 

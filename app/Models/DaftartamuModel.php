@@ -6,6 +6,7 @@ class DaftartamuModel extends Model
 {
 protected $table = 'daftartamu' ;
 protected $useTimestamps = true ;
+protected $allowedFields = ['nama','slug','alamat','telepon','foto'] ;
 
 public function getTamu($slug = false) {
     if( $slug == false) {

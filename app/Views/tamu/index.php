@@ -5,8 +5,22 @@
 <div class="container mt-4 bg-light">
   <div class="row">
     <div class="col">
-                <h1>Daftar Tamu</h1>
-                <a href="/tamu/create" class="btn btn-outline-primary">Tambah Tamu</a>
+        <div class="d-flex bd-highlight">
+            <div class="p-2 w-100 bd-highlight">
+            <h1>Daftar Tamu</h1>
+        </div>
+            <div class="p-2 flex-shrink-1 bd-highlight">
+            <a href="/tamu/create" class="btn btn-primary mt-2 mt-sm-0 float-sm-right">Tambah</a>
+        </div>
+        </div>
+
+        <?php if ( session()->getFlashdata('pesan')) : ?>
+            <div class="alert alert-success" role="alert">
+                Data Tamu telah berhasil ditambahkan.
+            </div>
+        <?php endif ; ?>
+
+        
                 <table class="table table-hover my-2">
                     <thead>
                         <tr>
