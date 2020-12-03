@@ -50,9 +50,11 @@ class Tamu extends BaseController
 
 
     public function create() {
+    
 
         $data = [
-            'title'=> 'Tambah Data Tamu'
+            'title'=> 'Tambah Data Tamu',
+            'validation' => \Config\Services::validation()
         ];
         return view('tamu/create', $data);
     }
@@ -61,10 +63,17 @@ class Tamu extends BaseController
         
         // validasi data yang di input
         if(!$this->validate([
-            'nama' => 'required|is_unique[tamu.nama]'
-
+            'nama' => [
+                'rules' =>'required|is_unique[daftartamu.nama]',
+                'errors' => [
+                    'required' => '{field} tamu harus diisi',
+                    'is_unique' => '{field} tamu sudah terdaftar'
+                ]
+            ]
         ])) {
-            return redirect()->to('/tamu/create');
+            $validation = \Config\Services::validation();
+            
+            return redirect()->to('/tamu/create')->withInput()->with('validation',$validation);
         }
 
         $slug = url_title($this->request->getVar('nama'), '_', true);
@@ -79,6 +88,28 @@ class Tamu extends BaseController
         session()->setFlashdata('pesan','Data berhasil ditambahkan.') ;
 
         return redirect()->to('/tamu');
+    }
+
+
+    public function delete($id) {
+        $this->daftartamuModel->delete($id);
+
+        session()->setFlashdata('pesan','Data berhasil dihapus.') ;
+
+        return redirect()->to('/tamu');
+    }
+
+    public function edit($slug) {
+        $data = [
+            'title'=> 'Ubah Data Tamu',
+            'validation' => \Config\Services::validation(),
+            'tamu' => $this->daftartamuModel->getTamu($slug)
+        ];
+        return view('tamu/edit', $data);
+    }
+    public function update($id)
+    {
+       dd($this->request->getVar()) ;
     }
 
 

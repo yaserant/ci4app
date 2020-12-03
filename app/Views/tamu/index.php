@@ -16,7 +16,7 @@
 
         <?php if ( session()->getFlashdata('pesan')) : ?>
             <div class="alert alert-success" role="alert">
-                Data Tamu telah berhasil ditambahkan.
+                <?= session()->getFlashdata('pesan'); ?>
             </div>
         <?php endif ; ?>
 
@@ -40,7 +40,7 @@
                         </td>
                         <td><?= $row['nama'];?></td>
                         <td>
-                            <a href="/tamu/<?= $row['slug'] ; ?>" class="btn btn-secondary">Detail</a>
+                            <a href="/tamu/<?= $row['slug'] ; ?>" class="btn btn-secondary mx-1">Detail</a>
                         </td>
                         </tr>
                         <?php $i++ ; ?>

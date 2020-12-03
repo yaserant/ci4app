@@ -33,7 +33,9 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::index');
 $routes->get('/tamu/create', 'Tamu::create') ;
-$routes->get('/tamu/(:segment)', 'Tamu::detail/$1') ;
+$routes->get('/tamu/edit/(:any)', 'Tamu::edit/$1' );
+$routes->delete('/tamu/(:num)', 'Tamu::delete/$1') ;
+$routes->get('/tamu/(:any)', 'Tamu::detail/$1') ;
 
 /**
  * --------------------------------------------------------------------

@@ -17,8 +17,14 @@
                             <p class="card-text">Alamat : <?= $tamu['alamat'] ; ?></p>
                             <p class="card-text">Telepon : <?= $tamu['telepon'] ; ?></p>
                             <p class="card-text"><small class="text-muted">terdaftar sejak <?= $tamu['created_at'] ; ?> </p>
-                            <button type="button" class="btn btn-warning">Ubah</button>
-                            <button type="button" class="btn btn-danger ml-2">Hapus</button>
+                            <a href="/tamu/edit/<?= $tamu['slug']; ?>" class="btn btn-warning">Ubah</a>
+                            <form action="/tamu/<?= $tamu['id']; ?>" method="POST" class="d-inline mx-2">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah data tamu akan dihapus ?')">
+                                    Hapus
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
